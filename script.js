@@ -89,8 +89,10 @@ var upperCasedCharacters = [
 ];
 
 // code to concatenate multiple arrays into a built array
-/*
-bigArray = bigArray.concat(exampleArray);*/
+
+let bigArray = [];
+
+// bigArray.concat(exampleArray);
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -98,7 +100,27 @@ function getPasswordOptions() {
   if(isNaN(characterLength) || characterLength < 10 || characterLength > 64) {
     alert("Character length has to be a number between 10 and 64 digits. Please try again.");
     return false;}
-}
+    if (confirm("Would you like to include LOWERCASE LETTERS in the password?")) {
+      bigArray = bigArray.concat(lowerCasedCharacters);
+    console.log(bigArray);
+    }
+    if (confirm("Would you like to include UPPERCASE LETTERS in the password?")) {
+      bigArray = bigArray.concat(upperCasedCharacters);
+    console.log(bigArray);
+    }
+    if (confirm("Would you like to include NUMERICAL CHARACTERS in the password?")) {
+      bigArray = bigArray.concat( numericCharacters);
+    console.log(bigArray);
+    }
+    if (confirm("Would you like to include SPECIAL CHARACTERS in the password?")) {
+      bigArray = bigArray.concat(specialCharacters);
+    console.log(bigArray);
+    }
+    if (bigArray.length == 0) {
+      alert("At least one type of character should be selected. Please try again.");
+    return false;}
+    }
+
 
 
 
