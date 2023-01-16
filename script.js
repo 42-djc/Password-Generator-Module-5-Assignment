@@ -138,12 +138,11 @@ function getRandom(arr) {
 function generatePassword() {
   let practicePassword = "";
   for (let i = 0; i < characterLength; i++) {
+    let randomIndex = Math.floor(Math.random()*bigArray.length);
     
-    practicePassword += "j"
+    practicePassword = practicePassword + bigArray[randomIndex];
     
-  }
-
-
+  } 
 
   return practicePassword;
 }
@@ -156,6 +155,7 @@ function writePassword() {
   var password = getPasswordOptions();
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
+  console.log(password);
 
   passwordText.value = password;
 }
