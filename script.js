@@ -88,19 +88,42 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+// code to concatenate multiple arrays into a built array
+/*
+bigArray = bigArray.concat(exampleArray);*/
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  characterLength = parseInt(prompt("How many characters do you want your password to be? (10-64 characters)"));
+  if(isNaN(characterLength) || characterLength < 10 || characterLength > 64) {
+    alert("Character length has to be a number between 10 and 64 digits. Please try again.");
+    return false;}
 }
+
+
+
+//useful math function from Dane
+//let randomIndex = Math.floor(Math.random()*arrayName.length)
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 
 }
 
+
+
 // Function to generate password with user input
 function generatePassword() {
+  let practicePassword = "";
+  for (let i = 0; i < characterLength; i++) {
+    
+    practicePassword += "j"
+    
+  }
 
+
+
+  return practicePassword;
 }
 
 // Get references to the #generate element
@@ -108,6 +131,7 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
+  var password = getPasswordOptions();
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
